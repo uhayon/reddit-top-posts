@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/reddit-top-posts/static/css/main.d3a8e185.chunk.css",
+    "main.js": "/reddit-top-posts/static/js/main.ab2169dd.chunk.js",
+    "main.js.map": "/reddit-top-posts/static/js/main.ab2169dd.chunk.js.map",
+    "runtime~main.js": "/reddit-top-posts/static/js/runtime~main.b625b27c.js",
+    "runtime~main.js.map": "/reddit-top-posts/static/js/runtime~main.b625b27c.js.map",
+    "static/js/2.3a3edd09.chunk.js": "/reddit-top-posts/static/js/2.3a3edd09.chunk.js",
+    "static/js/2.3a3edd09.chunk.js.map": "/reddit-top-posts/static/js/2.3a3edd09.chunk.js.map",
+    "index.html": "/reddit-top-posts/index.html",
+    "precache-manifest.d618ee6518502e508e0906c3325ae847.js": "/reddit-top-posts/precache-manifest.d618ee6518502e508e0906c3325ae847.js",
+    "service-worker.js": "/reddit-top-posts/service-worker.js",
+    "static/css/main.d3a8e185.chunk.css.map": "/reddit-top-posts/static/css/main.d3a8e185.chunk.css.map"
+  }
+}
