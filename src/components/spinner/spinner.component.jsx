@@ -1,7 +1,7 @@
 import React from 'react';
 import './spinner.styles.scss';
 
-const Spinner = ({ color = '#000', backgroundColor = 'rgba(255, 255, 255, 0.5)' }) => {
+const Spinner = ({ color = '#000', backgroundColor = 'rgba(0, 0, 0, 1)' }) => {
   return (
     <div style={{ backgroundColor }} className='spinnerContainer'>
       <svg className='spinner' height='50%' width='50%' viewBox='0 0 66 66' xmlns='http://www.w3.org/2000/svg'>

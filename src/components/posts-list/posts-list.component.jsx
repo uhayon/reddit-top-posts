@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getPosts } from '../../redux/post/post.actions';
+import { getPosts, dismissAll } from '../../redux/post/post.actions';
 
 import PostItem from '../post-item/post-item.component';
 import Spinner from '../spinner/spinner.component';
@@ -41,11 +41,15 @@ class PostsList extends React.Component {
   }
   
   render() {
-
+    const { sidebarOpened, isMobileScreen } = this.props;
     return (
-      <div className='posts-list'>
-        <h2 className='title'>Reddit Posts</h2>
+      <div className={`posts-list ${sidebarOpened ? 'show': 'hide'}`}>
+        <div className='head'>
+          <h2 className='title'>Reddit Posts</h2>
+          { isMobileScreen &&  <h2 className='close-button' onClick={this.props.handleMenuClose}>X</h2>}
+        </div>
         {this.renderContent()}
+        <h2 className='footer' onClick={() => this.props.dismissAll()}>DISMISS ALL</h2>
       </div>
     )
   }
@@ -60,6 +64,6 @@ const mapStateToProps = state => {
   };
 }
 
-const mapDispatchToProps = { getPosts };
+const mapDispatchToProps = { getPosts, dismissAll };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsList);

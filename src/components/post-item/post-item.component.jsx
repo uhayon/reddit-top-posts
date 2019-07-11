@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { selectPost } from '../../redux/post/post.actions';
+import { selectPost, dismissPost } from '../../redux/post/post.actions';
 
 import { getParsedCreationDate } from './post-item.utils';
 
 import './post-item.styles.scss'
 
-const PostItem = ({ created, author_fullname, thumbnail, num_comments, unread, title, id, selectPost }) => (
+const PostItem = ({ created, author_fullname, thumbnail, num_comments, unread, title, id, selectPost, dismissPost }) => (
   <div className={`post-item ${unread ? 'unread' : ''}`} onClick={() => selectPost(id)}>
     <div className='head'>
       <div className='unread-mark' />
@@ -19,13 +19,18 @@ const PostItem = ({ created, author_fullname, thumbnail, num_comments, unread, t
       <span>{title}</span>
     </div>
     <div className='footer'>
-      <button>Dismiss</button>
+      <button onClick={event => {
+        event.stopPropagation();
+        dismissPost(id);
+      }}>
+        Dismiss
+      </button>
       <span>{`${num_comments} comments`}</span>
     </div>
   </div>
 );
 
 const mapStateToProps = null;
-const mapDispatchToProps = { selectPost };
+const mapDispatchToProps = { selectPost, dismissPost };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostItem);

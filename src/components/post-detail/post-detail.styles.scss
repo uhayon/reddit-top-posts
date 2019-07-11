@@ -1,3 +1,12 @@
 .post-detail {
     flex: 2 0;
+    padding: 10px;
+    
+    > .head {
+        display: flex;
+        justify-content: flex-end;
+        img {
+            cursor: pointer;
+        }
+    }
 }

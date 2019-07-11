@@ -16,3 +16,12 @@ export const selectPost = id => ({
   type: PostActionTypes.SELECT_POST,
   payload: id
 });
+
+export const dismissPost = id => ({
+  type: PostActionTypes.DISMISS_POST,
+  payload: id
+});
+
+export const dismissAll = () => ({
+  type: PostActionTypes.DISMISS_ALL
+})

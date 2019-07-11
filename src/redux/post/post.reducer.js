@@ -38,6 +38,16 @@ const postReducer = (state = INITIAL_STATE, action) => {
         ...state,
         posts,
         selectedPost: posts.find(post => post.id === action.payload)
+      };
+    case PostActionTypes.DISMISS_ALL:
+      return {
+        ...state,
+        posts: []
+      };
+    case PostActionTypes.DISMISS_POST:
+      return {
+        ...state,
+        posts: state.posts.filter(post => post.id !== action.payload)
       }
     default:
       return state;
