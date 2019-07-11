@@ -10,4 +10,9 @@ export const getPosts = () => async dispatch => {
   } catch (error) {
     dispatch({ type: PostActionTypes.FETCH_POSTS_ERROR })
   }
-}
+};
+
+export const selectPost = id => ({
+  type: PostActionTypes.SELECT_POST,
+  payload: id
+});

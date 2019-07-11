@@ -3,7 +3,8 @@ import PostActionTypes from './post.types';
 const INITIAL_STATE = {
   searching: false,
   errorSearching: false,
-  posts: []
+  posts: [],
+  selectedPost: null
 };
 
 const postReducer = (state = INITIAL_STATE, action) => {
@@ -27,6 +28,17 @@ const postReducer = (state = INITIAL_STATE, action) => {
         errorSearching: true,
         searching: false
       };
+    case PostActionTypes.SELECT_POST:
+      const posts = state.posts.map(post => {
+        post.unread = post.unread && post.id !== action.payload;
+        return post;
+      });
+
+      return {
+        ...state,
+        posts,
+        selectedPost: posts.find(post => post.id === action.payload)
+      }
     default:
       return state;
   }

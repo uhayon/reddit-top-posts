@@ -29,9 +29,15 @@ class PostsList extends React.Component {
       );
     }
 
-    return posts.map(({ id, ...otherPostProps }) => (
-      <PostItem key={id} {...otherPostProps} />
-    ));
+    return (
+      <div className='list-container'>
+        {
+          posts.map(post => (
+            <PostItem key={post.id} {...post} />
+          ))
+        }
+      </div>
+    );
   }
   
   render() {

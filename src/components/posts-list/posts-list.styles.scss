@@ -1,16 +1,18 @@
 .posts-list {
+    flex: 1 1;
     background-color: black;
     color: white;
     overflow: hidden;
+    max-height: 100vh;
+    min-width: 300px;
+
+    .list-container {
+        overflow-y: scroll;
+        height: 100%;
+    }
 
     .title {
         background-color: gray;
         margin: 0;
-    }
-}
-
-@media only screen and (min-width: 500px) {
-    .posts-list {
-        max-width: 30vw;
     }
 }
