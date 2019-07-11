@@ -3,15 +3,45 @@ import { connect } from 'react-redux';
 
 import { getPosts } from '../../redux/post/post.actions';
 
+import PostItem from '../post-item/post-item.component';
+import Spinner from '../spinner/spinner.component';
+
 import './posts-list.styles.scss';
 
 class PostsList extends React.Component {
   componentDidMount() {
     this.props.getPosts();
   }
+
+  renderContent = () => {
+    const { posts, searching, errorSearching, getPosts } = this.props;
+
+    if (searching) {
+      return <Spinner color='#fff' />;
+    }
+
+    if (errorSearching) {
+      return (
+        <div>
+          <p>There was an error retrieving the posts.</p>
+          <button onClick={() => getPosts()} >Try again</button>
+        </div>
+      );
+    }
+
+    return posts.map(({ id, ...otherPostProps }) => (
+      <PostItem key={id} {...otherPostProps} />
+    ));
+  }
   
   render() {
-    return <div>Hola</div>
+
+    return (
+      <div className='posts-list'>
+        <h2 className='title'>Reddit Posts</h2>
+        {this.renderContent()}
+      </div>
+    )
   }
 };
 

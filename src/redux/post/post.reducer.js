@@ -24,7 +24,8 @@ const postReducer = (state = INITIAL_STATE, action) => {
     case PostActionTypes.FETCH_POSTS_ERROR:
       return {
         ...state,
-        errorSearching: true
+        errorSearching: true,
+        searching: false
       };
     default:
       return state;

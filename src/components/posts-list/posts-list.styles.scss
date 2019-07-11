@@ -1,0 +1,16 @@
+.posts-list {
+    background-color: black;
+    color: white;
+    overflow: hidden;
+
+    .title {
+        background-color: gray;
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .posts-list {
+        max-width: 30vw;
+    }
+}
