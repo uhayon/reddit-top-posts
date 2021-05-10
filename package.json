@@ -5,7 +5,7 @@
   "homepage": "https://uhayon.github.io/reddit-top-posts",
   "dependencies": {
     "axios": "^0.19.0",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
     "node-sass": "^4.12.0",
